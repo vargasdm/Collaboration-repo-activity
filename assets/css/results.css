@@ -1,0 +1,8 @@
+body {
+    background-color: #cae5ff;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+}
