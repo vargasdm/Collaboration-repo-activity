@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link placement for bulma, fonts, and APIs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <title>In or Out</title>
+</head>
+<body>
+    <!-- header color and size is just something I randomly put in. Do not have to stick to them -->
+    <header class="hero is-small is-link">
+        <div class="hero-body">
+            <h1 class="is-size-1 title has-text-centered">In or Out</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dropdown Search Bar -->
+        <section class="section box">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half">
+                        <div class="field">
+                            <p class="control">
+                                <span class="select is-fullwidth is-size-4">
+                                    <select>
+                                        <option>Select Cuisine</option>
+                                        <option id="cui-1">Cuisine 1</option>
+                                        <option id="cui-2">Cuisine 2</option>
+                                        <option id="cui-3">Cuisine 3</option>
+                                        <!-- Add more options in needed -->
+                                    </select>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Search button -->
+                    <div class="column">
+                        <span class="button is-link is-focused is-normal is-size-4" id="search-btn">Search</span>
+                    </div>
+                </div>
+                <!-- Checkboxes -->
+                <section class="is-size-3">
+                    <label class="checkbox" id="checkIn">
+                        <input type="checkbox"> In
+                    </label>
+                    <text class="p-6">or</text>
+                    <label class="checkbox" id="checkOut">
+                        <input type="checkbox"> Out
+                    </label>                    
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
