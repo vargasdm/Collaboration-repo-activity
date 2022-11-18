@@ -17,6 +17,3 @@ N/A
 Open through any internet browser and search through the dropdown menu for your cuisine.
 
 ## Credits
-
-
-## License
