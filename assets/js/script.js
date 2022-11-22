@@ -6,7 +6,7 @@
 //appKey: 706c2dd3a836b5b928bb38b5670b9ab2
 
 //{{'https://api.edamam.com/api/recipes/v2'}}search?q=chicken&app_id={{92ab2308}}&app_key={{706c2dd3a836b5b928bb38b5670b9ab2}}
-
+var whatCuisine = 
 function getRecipie() {
   const options = {
     method: "GET",
@@ -16,7 +16,8 @@ function getRecipie() {
     },
   };
 
-  fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken", options)
+  fetch(
+    `https://edamam-recipe-search.p.rapidapi.com/search?q=${whatCuisine}`,options)
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
@@ -40,3 +41,4 @@ getRecipie();
 // };
 // chickenCall();
 // console.log("testhere");
+//mexican, chinese, italian
