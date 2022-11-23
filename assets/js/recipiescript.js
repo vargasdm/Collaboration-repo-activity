@@ -1,4 +1,4 @@
-var whatCuisine = "french";
+var whatCuisine = "american";
 //localStorage.getItem("choice");
 
 function getRecipie() {
@@ -14,9 +14,18 @@ function getRecipie() {
     `https://edamam-recipe-search.p.rapidapi.com/search?q=${whatCuisine}`, options)
     .then((response) => response.json())
     .then((response) => console.log(response))
+    .then (function (hits) {
+     // var foodImg = hits[0].recipe.image;
+      var foodLink = hits[1].recipe.shareAs;
+      var foodIng = hits[0].recipe.ingredientLines;
+      console.log(foodImg, foodLink, foodIng);
+    })
     .catch((err) => console.error(err))
 }
 getRecipie();
 
-//mexican, italian,  chinese
+//mexican, italian,  chinese, american
 //${chinese}
+// for loop (in html make ul)
+//create li element & li.textContent = data.hits.recipe.ingredientLines[i]
+//append li to ul.
