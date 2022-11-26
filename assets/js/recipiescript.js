@@ -1,4 +1,5 @@
 var whatCuisine = "american";
+var tester = document.getElementById("#tester");
 //localStorage.getItem("choice");
 
 function getRecipie() {
@@ -16,14 +17,23 @@ function getRecipie() {
     .then((response) => console.log(response))
     .then (function (hits) {
      // var foodImg = hits[0].recipe.image;
-      var foodLink = hits[1].recipe.shareAs;
-      var foodIng = hits[0].recipe.ingredientLines;
+       foodLink = hits[0].recipe.shareAs;
+       foodIng = hits[0].recipe.ingredientLines;
+       foodImg = hits[0].recipe
       console.log(foodImg, foodLink, foodIng);
     })
     .catch((err) => console.error(err))
-}
-getRecipie();
+    populate()
+};
+ function populate(){
+  var recipeName = document.querySelectorAll('card-header-title')
+  var foodImgage = document.querySelectorAll('image')
+  var recipeInfo = document.querySelectorAll('content')
 
+
+ };
+//getRecipie();
+tester.addEventListener('click', getRecipie);
 //mexican, italian,  chinese, american
 //${chinese}
 // for loop (in html make ul)
