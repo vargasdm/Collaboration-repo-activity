@@ -1,8 +1,7 @@
 var zomatoApiKey = "173297606dd309e858d947e8c0e0562c";
 var openWeatherApiKey = "40a12dd5d21fb2676b3f9bbaa7760c97";
 var geocodeBaseUrl = "https://api.openweathermap.org/geo/1.0/direct?q=";
-var cityName = "Raleigh";
-// var cityName = JSON.parse(localStorage.getItem("city-name"));
+var cityName = JSON.parse(localStorage.getItem("city-name"));
 var geoLat;
 var geoLon;
 var cityData;
@@ -10,6 +9,9 @@ var localRestaurants = [];
 var myHeaders = new Headers();
 var searchedCuisine = JSON.parse(localStorage.getItem("cuisine-name"));
 var restaurantBlocks = document.getElementById("restaurant-1-name");
+
+console.log(cityName);
+console.log(searchedCuisine);
 
 myHeaders.append("user-key", zomatoApiKey);
 
@@ -42,24 +44,22 @@ fetch(queryGeoUrl, {})
         console.log(cityData)
         cityData = cityData.nearby_restaurants
         console.log(cityData)
+        console.log(cityData[0].restaurant.cuisines)
         localRestaurants = cityData.filter(localCuisine);
-        function localCuisine(result) {
-          // have to check if this works
-          // if (result.restaurant.cuisines === searchedCuisine) {
-          //   return;
-          // }
-          return result.restaurant.cuisines === "Mexican";
+        function localCuisine(cityData) {
+ 
+          return cityData.restaurant.cuisines.includes(searchedCuisine);
         }
         console.log(localRestaurants)
 
-        function renderRestaurants() {
-          // restaurantBlocks.innerHTML = "";
-          var restaurantOneTitle = localRestaurants[0].restaurant.name
-          restaurantBlocks.appendChild(restaurantOneTitle)
-          // console.log(restaurantBlocks.textcontent);
-        }
+        // function renderRestaurants() {
+        //   // restaurantBlocks.innerHTML = "";
+        //   var restaurantOneTitle = localRestaurants[0].restaurant.name
+        //   restaurantBlocks.appendChild(restaurantOneTitle)
+        //   // console.log(restaurantBlocks.textcontent);
+        // }
 
-        renderRestaurants();
+        // renderRestaurants();
       })
       .catch(error => console.log('error', error))
 
