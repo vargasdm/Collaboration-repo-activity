@@ -12,43 +12,52 @@
   <title>In or Out - Resturants</title>
 </head>
 
-  <header class="hero is-small is-link">
-    <div class="hero-body">
-      <h1 class="is-size-1 title has-text-centered">In or Out</h1>
-    </div>
-  </header>
-  
-  <main>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-5">
-        <header class="box mt-2">
-          <h1 class="title has-text-centered"> Resturants near you:</h1>
-        </header>
-      </div>
-    </div>
+<header class="hero is-small is-link">
+  <div class="hero-body">
+    <h1 class="is-size-1 title has-text-centered">In or Out</h1>
+  </div>
+</header>
 
-    <div class="columns is-mobile is-centered">
-      <div class="column is-5">
-        <header class="box list p-1">
-          <ul class="list-item has-text-centered">
-            <li class="m-3 is-size-4 has-text-weight-medium" id="rest-1">Resturant name here</li>
-              <p class="is-size-5">Resturant address</p>
-            <li class="m-3 is-size-4 has-text-weight-medium" id="rest-2">Resturant name here</li>
-              <p class="is-size-5">Resturant address</p>
-            <li class="m-3 is-size-4 has-text-weight-medium" id="rest-3">Resturant name here</li>
-              <p class="is-size-5">Resturant address</p>
-            <li class="m-3 is-size-4 has-text-weight-medium" id="rest-4">Resturant name here</li>
-              <p class="is-size-5">Resturant address</p>
-            <li class="m-3 is-size-4 has-text-weight-medium" id="rest-5">Resturant name here</li>
-              <p class="is-size-5">Resturant address</p>
-          </ul>
-        </header>
-      </div>
+<main>
+  <div class="columns is-mobile is-centered">
+    <div class="column is-5">
+      <header class="box mt-2">
+        <h1 class="title has-text-centered"> Resturants near you:</h1>
+      </header>
     </div>
+  </div>
 
-  </main>
+  <div class="columns is-mobile is-centered">
+    <div class="column is-5">
+      <header class="box list p-1">
+        <ul id="restaurant-list" class="list-item has-text-centered"></ul>
+      </header>
+    </div>
+  </div>
 
-<script src="./assets/js/script.js"></script>
+  <section class="modal hidden">
+    <div class="flex">
+      <img
+        src="https://static9.depositphotos.com/1431107/1135/i/600/depositphotos_11359051-stock-photo-sorry-emoticon.jpg"
+        width="50px" height="50px" alt="user" />
+      <button class="btn-close">⨉</button>
+    </div>
+    <div>
+      <h3>Sorry :(</h3>
+      <p>
+        Sorry, there are no restaurants within this city that serve this cuisine. Try a different city or cuisine.
+      </p>
+    </div>
+  </section>
+
+  <div class="overlay hidden"></div>
+
+
+  <a href="index.html"> Try Another City or Cuisine</a>
+</main>
+
+<script src="./assets/js/restaurant-script.js"></script>
 
 </body>
+
 </html>

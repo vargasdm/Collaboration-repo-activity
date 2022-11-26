@@ -9,9 +9,7 @@ var localRestaurants = [];
 var myHeaders = new Headers();
 var searchedCuisine = JSON.parse(localStorage.getItem("cuisine-name"));
 var restaurantBlocks = document.getElementById("restaurant-1-name");
-
-console.log(cityName);
-console.log(searchedCuisine);
+var restaurantList = document.getElementById("restaurant-list");
 
 myHeaders.append("user-key", zomatoApiKey);
 
@@ -28,38 +26,76 @@ fetch(queryGeoUrl, {})
   })
   .then(function (data) {
     var geoData = data;
-    console.log(geoData)
     var geoLat = geoData[0].lat;
-    console.log(geoLat)
     geoLat.toString();
     var geoLon = geoData[0].lon;
-    console.log(geoLon)
-    console.log(geoLon);
 
     // fetches the city data based on lat and lon
     fetch("https://developers.zomato.com/api/v2.1/geocode?lat=" + geoLat + "&lon=" + geoLon, requestOptions)
       .then(response => response.json())
       .then(result => {
         cityData = result
-        console.log(cityData)
         cityData = cityData.nearby_restaurants
-        console.log(cityData)
-        console.log(cityData[0].restaurant.cuisines)
         localRestaurants = cityData.filter(localCuisine);
         function localCuisine(cityData) {
- 
           return cityData.restaurant.cuisines.includes(searchedCuisine);
         }
-        console.log(localRestaurants)
 
-        // function renderRestaurants() {
-        //   // restaurantBlocks.innerHTML = "";
-        //   var restaurantOneTitle = localRestaurants[0].restaurant.name
-        //   restaurantBlocks.appendChild(restaurantOneTitle)
-        //   // console.log(restaurantBlocks.textcontent);
-        // }
+        function renderRestaurants() {
+          if (localRestaurants.length !== 0 || null || undefined) {
+            for (var i = 0; i < localRestaurants.length; i++) {
 
-        // renderRestaurants();
+              var newRestaurantEl = document.createElement("li")
+              newRestaurantEl.classList.add("m-3", "is-size-4", "has-text-weight-medium");
+              newRestaurantEl.style.display = "center";
+              newRestaurantEl.textContent = localRestaurants[i].restaurant.name
+              restaurantList.appendChild(newRestaurantEl)
+
+              var newRestaurantImgEl = document.createElement("img")
+              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image)
+              newRestaurantImgEl.style.display = "block";
+              console.log(newRestaurantImgEl);
+              newRestaurantEl.appendChild(newRestaurantImgEl);
+
+              var newRestaurantAddressEl = document.createElement("p")
+              newRestaurantAddressEl.classList.add("is-size-5");
+              newRestaurantAddressEl.textContent = "Address: " + localRestaurants[i].restaurant.location.address;
+              newRestaurantEl.appendChild(newRestaurantAddressEl);
+
+              var newRestaurantReviewEl = document.createElement("p")
+              newRestaurantReviewEl.classList.add("is-size-5");
+              newRestaurantReviewEl.textContent = "Review: " + localRestaurants[i].restaurant.user_rating.aggregate_rating;
+              newRestaurantEl.appendChild(newRestaurantReviewEl);
+
+            }
+          } else {
+            const modal = document.querySelector(".modal");
+            const overlay = document.querySelector(".overlay");
+            const openModalBtn = document.querySelector(".btn-open");
+            const closeModalBtn = document.querySelector(".btn-close");
+
+            modal.classList.remove("hidden");
+            overlay.classList.remove("hidden");
+            // close modal function
+            const closeModal = function () {
+              modal.classList.add("hidden");
+              overlay.classList.add("hidden");
+            };
+            // close the modal when the close button and overlay is clicked
+            closeModalBtn.addEventListener("click", closeModal);
+            overlay.addEventListener("click", closeModal);
+
+            // close modal when the Esc key is pressed
+            document.addEventListener("keydown", function (e) {
+              if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+                closeModal();
+              }
+            });
+          }
+        }
+
+
+        renderRestaurants();
       })
       .catch(error => console.log('error', error))
 
