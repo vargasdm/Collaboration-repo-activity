@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link placement for bulma, fonts, and APIs -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
-    <title>In or Out</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-<body>
+    <title>In or Out</title>
+  </head>
+
+  <body>
     <header class="hero is-small is-link">
-        <div class="hero-body">
-            <h1 class="is-size-1 title has-text-centered">In or Out</h1>
-        </div>
+      <div class="hero-body">
+        <h1 class="is-size-1 title has-text-centered">In or Out</h1>
+      </div>
     </header>
 
     <main>
-        <!-- Dropdown Search Bar -->
-        <section class="section box">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is is-half">
-                        <div class="field">
-                            <div class="control">
-                                <span class="select is-fullwidth is-size-4">
-                                    <select id = "cuisine-select">
-                                        <option>Select Cuisine</option>
-                                        <option id="cuisineAmerican" value = "American">American</option>
-                                        <option id="cuisineChinese" value = "Chinese">Chinese</option>
-                                        <option id="cuisineItalian" value = "Italian">Italian</option>
-                                        <option id="cuisineMexican" value = "Mexican">Mexican</option>
-                                        <!-- Add more options in needed -->
-                                    </select>
-                                </span>
-                                <!-- City Name Input -->
-                                <input class="input is-fullwidth is-size-4 mt-4" type="text" placeholder="Type in City Name" id="cityName">
-                            </div>
-                            <!-- Search button -->
-                            <span class="button is-link is-focused is-normal is-size-4 mt-4" id="inBtn">Dine In</span>
-                            <span class="button is-link is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn">
-                                Dine Out
-                                <a href = "restaurant.html">Page</a>
-                            </span>
-                        </div>
-                    </div>
+      <!-- Dropdown Search Bar -->
+      <section class="section box">
+        <div class="container">
+          <div class="columns">
+            <div class="column is is-half">
+              <div class="field">
+                <div class="control">
+                  <span class="select is-fullwidth is-size-4">
+                    <select id="cuisine-select">
+                      <option>Select Cuisine</option>
+                      <option id="cuisineAmerican" value="American">
+                        American
+                      </option>
+                      <option id="cuisineChinese" value="Chinese">
+                        Chinese
+                      </option>
+                      <option id="cuisineItalian" value="Italian">
+                        Italian
+                      </option>
+                      <option id="cuisineMexican" value="Mexican">
+                        Mexican
+                      </option>
+                      <!-- Add more options in needed -->
+                    </select>
+                  </span>
+                  <!-- City Name Input -->
+                  <input
+                    class="input is-fullwidth is-size-4 mt-4"
+                    type="text"
+                    placeholder="Type in City Name"
+                    id="cityName"
+                  />
                 </div>
+                <!-- Search button -->
+                <span
+                  class="button is-link is-focused is-normal is-size-4 mt-4"
+                  id="inBtn"
+                  >Dine In
+                  <a href="recipes.html"></a>
+                </span>
+                <span
+                  class="button is-link is-focused is-normal is-size-4 mt-4 ml-6"
+                  id="outBtn"
+                >
+                  Dine Out
+                  <a href="restaurant.html">Page</a>
+                </span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
     <script type="text/javascript" src="./assets/js/pseudocode.js"></script>
-
-</body>
+  </body>
 </html>
