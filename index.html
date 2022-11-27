@@ -27,12 +27,12 @@
                         <div class="field">
                             <div class="control">
                                 <span class="select is-fullwidth is-size-4">
-                                    <select>
+                                    <select id = "cuisine-select">
                                         <option>Select Cuisine</option>
-                                        <option id="cuisineAmerican">American</option>
-                                        <option id="cuisineChinese">Chinese</option>
-                                        <option id="cuisineItalian">Italian</option>
-                                        <option id="cuisineMexican">Mexican</option>
+                                        <option id="cuisineAmerican" value = "American">American</option>
+                                        <option id="cuisineChinese" value = "Chinese">Chinese</option>
+                                        <option id="cuisineItalian" value = "Italian">Italian</option>
+                                        <option id="cuisineMexican" value = "Mexican">Mexican</option>
                                         <!-- Add more options in needed -->
                                     </select>
                                 </span>
@@ -41,7 +41,10 @@
                             </div>
                             <!-- Search button -->
                             <span class="button is-link is-focused is-normal is-size-4 mt-4" id="inBtn">Dine In</span>
-                            <span class="button is-link is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn">Dine Out</span>
+                            <span class="button is-link is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn">
+                                Dine Out
+                                <a href = "restaurant.html">Page</a>
+                            </span>
                         </div>
                     </div>
                 </div>
