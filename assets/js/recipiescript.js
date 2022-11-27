@@ -18,7 +18,7 @@ function getRecipie() {
     .then (function (data) {
     temp="";
     for(i=0;i<4;i++){
-      foodName = data.hits=[0].recipe.label;
+      foodName = data.hits[0].recipe.label;
       foodLink = data.hits=[0].recipe.shareAs;
       //foodIng = data.hits=[0].recipe.ingredientLines;
       foodImg = data.hits=[0].recipe.image;
@@ -27,9 +27,9 @@ function getRecipie() {
     })
     };
     function populate(){
-      var recipeName = document.querySelector('.card-header-title')
-      var foodImage = document.querySelectorAll('.image')
-      var recipeInfo = document.querySelectorAll('content')
+      var recipeName = document.getElementById('#recipe-1')
+      var foodImage = document.getElementById('#recipe-1')
+      var recipeInfo = document.getElementById('#recipe-1')
       
       recipeName.innerHTML = foodName;
       foodImage.replace(img) = foodImg;
