@@ -22,54 +22,32 @@
     </header>
 
     <main>
-      <!-- Dropdown Search Bar -->
-      <section class="section box">
-        <div class="container">
-          <div class="columns">
-            <div class="column is is-half">
-              <div class="field">
-                <div class="control">
-                  <span class="select is-fullwidth is-size-4">
-                    <select id="cuisine-select">
-                      <option>Select Cuisine</option>
-                      <option id="cuisineAmerican" value="American">
-                        American
-                      </option>
-                      <option id="cuisineChinese" value="Chinese">
-                        Chinese
-                      </option>
-                      <option id="cuisineItalian" value="Italian">
-                        Italian
-                      </option>
-                      <option id="cuisineMexican" value="Mexican">
-                        Mexican
-                      </option>
-                      <!-- Add more options in needed -->
-                    </select>
-                  </span>
-                  <!-- City Name Input -->
-                  <input
-                    class="input is-fullwidth is-size-4 mt-4"
-                    type="text"
-                    placeholder="Type in City Name"
-                    id="cityName"
-                  />
+        <!-- Dropdown Search Bar -->
+        <section class="section box">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is is-half">
+                        <div class="field">
+                            <div class="control">
+                                <span class="select is-fullwidth is-size-4">
+                                    <select id = "cuisine-select">
+                                        <option>Select Cuisine</option>
+                                        <option id="cuisineAmerican" value = "American">American</option>
+                                        <option id="cuisineChinese" value = "Chinese">Chinese</option>
+                                        <option id="cuisineItalian" value = "Italian">Italian</option>
+                                        <option id="cuisineMexican" value = "Mexican">Mexican</option>
+                                        <!-- Add more options in needed -->
+                                    </select>
+                                </span>
+                                <!-- City Name Input -->
+                                <input class="input is-fullwidth is-size-4 mt-4" type="text" placeholder="Type in City Name" id="cityName">
+                            </div>
+                            <!-- Search button -->
+                            <span class="button is-focused is-normal is-size-4 mt-4" id="inBtn"><a href = "./recipes.html">Dine In</a></span>
+                            <span class="button is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn"><a href = "./restaurant.html">Dine Out</a></span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Search button -->
-                <span
-                  class="button is-link is-focused is-normal is-size-4 mt-4"
-                  id="inBtn"
-                  >Dine In
-                  <a href="recipes.html"></a>
-                </span>
-                <span
-                  class="button is-link is-focused is-normal is-size-4 mt-4 ml-6"
-                  id="outBtn"
-                >
-                  Dine Out
-                  <a href="restaurant.html">Page</a>
-                </span>
-              </div>
             </div>
           </div>
         </div>
