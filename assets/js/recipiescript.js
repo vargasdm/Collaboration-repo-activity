@@ -14,7 +14,10 @@ function getRecipie() {
     },
   };
 
-  fetch(`https://edamam-recipe-search.p.rapidapi.com/search?q=${whatCuisine}`, options)
+  fetch(
+    `https://edamam-recipe-search.p.rapidapi.com/search?q=${whatCuisine}`,
+    options
+  )
     //assign info to varaible
     .then((response) => response.json())
     .then((response) => {
@@ -24,34 +27,43 @@ function getRecipie() {
       foodName = recipeInfo.hits[0].recipe.label;
       foodLink = recipeInfo.hits[0].recipe.shareAs;
       foodImg = recipeInfo.hits[0].recipe.image;
-      console.log(foodName);
-      console.log(foodLink);
-      console.log(foodImg);
+      // console.log(foodName);
+      // console.log(foodLink);
+      // console.log(foodImg);
+      populate(recipeInfo);
     });
 }
-getRecipie()
+getRecipie();
 // loop through 3-5 recipies
 function populate() {
   for (var i = 0; i < 5; i++) {
-
     var listInfo = document.createElement("li");
     listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium");
     listInfo.style.display = "center";
-    listInfo.textContent = foodName[i];
-    placeInfo.appendChild(listInfo)
+    listInfo.textContent = recipeInfo.hits[i].recipe.label;
+    placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
-    imgInfo.setAttribute("src", foodImg[i])
+    imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
     imgInfo.style.display = "block";
+    imgInfo.style.display = "center";
     listInfo.appendChild(imgInfo);
 
-    var recipeLink = document.createElement("p");
+    var recipeLink = document.createElement("a");
+    //recipeLink.setAttribute("href", recipeInfo.hits[i].recipe.shareAs);
+    var textNode = document.createTextNode(recipeInfo.hits[0].recipe.label);
+    // Append the textNode as a child to anchor.
+    recipeLink.appendChild(textNode);
+    recipeLink.href = recipeInfo.hits[0].recipe.shareAs;
+    recipeLink.classList.add("m-3", "is-size-4", "has-text-weight-medium");
     recipeLink.classList.add("is-size-5");
-    recipeLink.textContent = foodLink[i];
+    recipeLink.style.display = "center";
+    document.body.appendChild(recipeLink);
+    
+    // recipeLink.textContent = recipeInfo.hits[i].recipe.shareAs;
     imgInfo.appendChild(recipeLink);
-  }  
+  }
 }
-populate();
 //tester.addEventListener('click', getRecipie);
 //getRecipie();
 // for loop (in html make ul)
