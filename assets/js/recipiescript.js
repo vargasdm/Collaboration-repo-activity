@@ -38,16 +38,15 @@ getRecipie();
 function populate() {
   for (var i = 0; i < 5; i++) {
     var listInfo = document.createElement("li");
-    listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium", );
-   listInfo.style.display = "center";
+    listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium");
     listInfo.textContent = recipeInfo.hits[i].recipe.label;
     placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
     imgInfo.classList.add("pl-6")
     imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
-   imgInfo.style.display = "block";
-    listInfo.appendChild(imgInfo);
+    imgInfo.classList.add("image" , "is-inline-block")
+    placeInfo.appendChild(imgInfo);
 
     var recipeLink = document.createElement('a');
     var textNode = document.createTextNode("Recipe Prep Information");
