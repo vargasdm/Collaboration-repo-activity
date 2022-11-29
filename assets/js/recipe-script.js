@@ -60,7 +60,3 @@ function populate() {
     listInfo.appendChild(recipeLink);
   }
 }
-//tester.addEventListener('click', getRecipie);
-//getRecipie();
-// for loop (in html make ul)
-//for(i=0;i<4;i++){}
