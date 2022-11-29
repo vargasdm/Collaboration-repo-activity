@@ -52,10 +52,11 @@ fetch(queryGeoUrl, {})
               restaurantList.appendChild(newRestaurantEl)
               // creates img element for each restaurant
               var newRestaurantImgEl = document.createElement("img")
+              newRestaurantImgEl.classList.add("image" , "is-inline-block");
               newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image)
               newRestaurantImgEl.style.display = "block";
               console.log(newRestaurantImgEl);
-              newRestaurantEl.appendChild(newRestaurantImgEl);
+              restaurantList.appendChild(newRestaurantImgEl);
               // creates p element for address for each restaurant
               var newRestaurantAddressEl = document.createElement("p")
               newRestaurantAddressEl.classList.add("is-size-5");
