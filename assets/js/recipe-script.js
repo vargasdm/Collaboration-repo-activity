@@ -43,7 +43,6 @@ function populate() {
     placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
-    imgInfo.classList.add("pl-6")
     imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
     imgInfo.classList.add("image" , "is-inline-block")
     placeInfo.appendChild(imgInfo);
