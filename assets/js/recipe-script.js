@@ -43,26 +43,20 @@ function populate() {
     placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
+    imgInfo.classList.add("pl-6")
     imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
     imgInfo.classList.add("image" , "is-inline-block")
     placeInfo.appendChild(imgInfo);
 
-    var recipeLink = document.createElement("a");
+    var recipeLink = document.createElement('a');
+    var textNode = document.createTextNode("Recipe Prep Information");
     //recipeLink.setAttribute("href", recipeInfo.hits[i].recipe.shareAs);
-    var textNode = document.createTextNode(recipeInfo.hits[0].recipe.label);
-    // Append the textNode as a child to anchor.
-    recipeLink.appendChild(textNode);
+    // Append the textNode as a child to recipeLink.
     recipeLink.href = recipeInfo.hits[0].recipe.shareAs;
+    recipeLink.appendChild(textNode);
     recipeLink.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-    recipeLink.classList.add("is-size-5");
     recipeLink.style.display = "center";
-    document.body.appendChild(recipeLink);
-    
-    // recipeLink.textContent = recipeInfo.hits[i].recipe.shareAs;
-    imgInfo.appendChild(recipeLink);
+   // document.body.appendChild(recipeLink); 
+    listInfo.appendChild(recipeLink);
   }
 }
-//tester.addEventListener('click', getRecipie);
-//getRecipie();
-// for loop (in html make ul)
-//for(i=0;i<4;i++){}
