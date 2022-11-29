@@ -38,30 +38,27 @@ getRecipie();
 function populate() {
   for (var i = 0; i < 5; i++) {
     var listInfo = document.createElement("li");
-    listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-    listInfo.style.display = "center";
+    listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium", );
+   listInfo.style.display = "center";
     listInfo.textContent = recipeInfo.hits[i].recipe.label;
     placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
+    imgInfo.classList.add("pl-6")
     imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
-    imgInfo.style.display = "block";
-    imgInfo.style.display = "center";
+   imgInfo.style.display = "block";
     listInfo.appendChild(imgInfo);
 
-    var recipeLink = document.createElement("a");
+    var recipeLink = document.createElement('a');
+    var textNode = document.createTextNode("Recipe Prep Information");
     //recipeLink.setAttribute("href", recipeInfo.hits[i].recipe.shareAs);
-    var textNode = document.createTextNode(recipeInfo.hits[0].recipe.label);
-    // Append the textNode as a child to anchor.
-    recipeLink.appendChild(textNode);
+    // Append the textNode as a child to recipeLink.
     recipeLink.href = recipeInfo.hits[0].recipe.shareAs;
+    recipeLink.appendChild(textNode);
     recipeLink.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-    recipeLink.classList.add("is-size-5");
     recipeLink.style.display = "center";
-    document.body.appendChild(recipeLink);
-    
-    // recipeLink.textContent = recipeInfo.hits[i].recipe.shareAs;
-    imgInfo.appendChild(recipeLink);
+   // document.body.appendChild(recipeLink); 
+    listInfo.appendChild(recipeLink);
   }
 }
 //tester.addEventListener('click', getRecipie);
