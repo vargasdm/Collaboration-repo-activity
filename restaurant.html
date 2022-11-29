@@ -27,6 +27,7 @@
     </div>
   </div>
 
+  <!-- List of restaurants for the city searched -->
   <div class="columns is-mobile is-centered">
     <div class="column is-5">
       <header class="box list p-1">
@@ -35,24 +36,24 @@
     </div>
   </div>
 
+  <!-- Modal that is shown in no restaurants are present for the selected cuisine -->
+  <div class="overlay">
   <section class="modal hidden">
     <div class="flex">
       <img
-        src="https://static9.depositphotos.com/1431107/1135/i/600/depositphotos_11359051-stock-photo-sorry-emoticon.jpg"
-        width="50px" height="50px" alt="user" />
+      src="https://static9.depositphotos.com/1431107/1135/i/600/depositphotos_11359051-stock-photo-sorry-emoticon.jpg"
+      width="50px" height="50px" alt="user" />
       <button class="btn-close">⨉</button>
     </div>
     <div>
       <h3>Sorry :(</h3>
       <p>
-        Sorry, there are no restaurants within this city that serve this cuisine. Try a different city or cuisine.
+        Sorry, there are no restaurants within this city that serve this cuisine. <a href="./index.html">Try a different city or cuisine.</a>
       </p>
     </div>
   </section>
-
-  <div class="overlay hidden">
-    <a href="./index.html">Try Another City or Cuisine</a>
   </div>
+
 
 </main>
 

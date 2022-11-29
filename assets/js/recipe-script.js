@@ -39,15 +39,13 @@ function populate() {
   for (var i = 0; i < 5; i++) {
     var listInfo = document.createElement("li");
     listInfo.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-    listInfo.style.display = "center";
     listInfo.textContent = recipeInfo.hits[i].recipe.label;
     placeInfo.appendChild(listInfo);
 
     var imgInfo = document.createElement("img");
     imgInfo.setAttribute("src", recipeInfo.hits[i].recipe.image);
-    imgInfo.style.display = "block";
-    imgInfo.style.display = "center";
-    listInfo.appendChild(imgInfo);
+    imgInfo.classList.add("image" , "is-inline-block")
+    placeInfo.appendChild(imgInfo);
 
     var recipeLink = document.createElement("a");
     //recipeLink.setAttribute("href", recipeInfo.hits[i].recipe.shareAs);

@@ -47,15 +47,14 @@ fetch(queryGeoUrl, {})
 
               var newRestaurantEl = document.createElement("li")
               newRestaurantEl.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-              newRestaurantEl.style.display = "center";
               newRestaurantEl.textContent = localRestaurants[i].restaurant.name
               restaurantList.appendChild(newRestaurantEl)
 
               var newRestaurantImgEl = document.createElement("img")
-              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image)
-              newRestaurantImgEl.style.display = "block";
+              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image);
+              newRestaurantImgEl.classList.add("image", "is-inline-block");
               console.log(newRestaurantImgEl);
-              newRestaurantEl.appendChild(newRestaurantImgEl);
+              restaurantList.appendChild(newRestaurantImgEl);
 
               var newRestaurantAddressEl = document.createElement("p")
               newRestaurantAddressEl.classList.add("is-size-5");
@@ -70,20 +69,16 @@ fetch(queryGeoUrl, {})
             }
           } else {
             const modal = document.querySelector(".modal");
-            const overlay = document.querySelector(".overlay");
             const openModalBtn = document.querySelector(".btn-open");
             const closeModalBtn = document.querySelector(".btn-close");
 
             modal.classList.remove("hidden");
-            overlay.classList.remove("hidden");
             // close modal function
             const closeModal = function () {
               modal.classList.add("hidden");
-              overlay.classList.add("hidden");
             };
             // close the modal when the close button and overlay is clicked
             closeModalBtn.addEventListener("click", closeModal);
-            overlay.addEventListener("click", closeModal);
 
             // close modal when the Esc key is pressed
             document.addEventListener("keydown", function (e) {
