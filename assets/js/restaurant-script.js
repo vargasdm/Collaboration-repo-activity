@@ -47,15 +47,14 @@ fetch(queryGeoUrl, {})
 
               var newRestaurantEl = document.createElement("li")
               newRestaurantEl.classList.add("m-3", "is-size-4", "has-text-weight-medium");
-              newRestaurantEl.style.display = "center";
               newRestaurantEl.textContent = localRestaurants[i].restaurant.name
               restaurantList.appendChild(newRestaurantEl)
 
               var newRestaurantImgEl = document.createElement("img")
-              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image)
-              newRestaurantImgEl.style.display = "block";
+              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image);
+              newRestaurantImgEl.classList.add("image", "is-inline-block");
               console.log(newRestaurantImgEl);
-              newRestaurantEl.appendChild(newRestaurantImgEl);
+              restaurantList.appendChild(newRestaurantImgEl);
 
               var newRestaurantAddressEl = document.createElement("p")
               newRestaurantAddressEl.classList.add("is-size-5");
