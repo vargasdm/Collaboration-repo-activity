@@ -10,7 +10,7 @@ var myHeaders = new Headers();
 var searchedCuisine = JSON.parse(localStorage.getItem("cuisine-name"));
 var restaurantBlocks = document.getElementById("restaurant-1-name");
 var restaurantList = document.getElementById("restaurant-list");
-
+var queryGeoUrl = geocodeBaseUrl + cityName + "&appid=" + openWeatherApiKey;
 myHeaders.append("user-key", zomatoApiKey);
 
 var requestOptions = {
@@ -19,7 +19,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-var queryGeoUrl = geocodeBaseUrl + cityName + "&appid=" + openWeatherApiKey;
+// fetches the lat and lon values for the specific
 fetch(queryGeoUrl, {})
   .then(function (response) {
     return response.json();
@@ -41,26 +41,27 @@ fetch(queryGeoUrl, {})
           return cityData.restaurant.cuisines.includes(searchedCuisine);
         }
 
+        // function that either renders the local restaurants in that city or modal alert 
         function renderRestaurants() {
           if (localRestaurants.length !== 0 || null || undefined) {
             for (var i = 0; i < localRestaurants.length; i++) {
-
+              // creates li element for each restaurant
               var newRestaurantEl = document.createElement("li")
               newRestaurantEl.classList.add("m-3", "is-size-4", "has-text-weight-medium");
               newRestaurantEl.textContent = localRestaurants[i].restaurant.name
               restaurantList.appendChild(newRestaurantEl)
-
+              // creates img element for each restaurant
               var newRestaurantImgEl = document.createElement("img")
-              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image);
-              newRestaurantImgEl.classList.add("image", "is-inline-block");
+              newRestaurantImgEl.setAttribute("src", localRestaurants[i].restaurant.featured_image)
+              newRestaurantImgEl.style.display = "block";
               console.log(newRestaurantImgEl);
-              restaurantList.appendChild(newRestaurantImgEl);
-
+              newRestaurantEl.appendChild(newRestaurantImgEl);
+              // creates p element for address for each restaurant
               var newRestaurantAddressEl = document.createElement("p")
               newRestaurantAddressEl.classList.add("is-size-5");
               newRestaurantAddressEl.textContent = "Address: " + localRestaurants[i].restaurant.location.address;
               newRestaurantEl.appendChild(newRestaurantAddressEl);
-
+              // creates p element for review for each restaurant
               var newRestaurantReviewEl = document.createElement("p")
               newRestaurantReviewEl.classList.add("is-size-5");
               newRestaurantReviewEl.textContent = "Review: " + localRestaurants[i].restaurant.user_rating.aggregate_rating;
@@ -72,7 +73,7 @@ fetch(queryGeoUrl, {})
             const overlay =document.querySelector(".overlay");
             const openModalBtn = document.querySelector(".btn-open");
             const closeModalBtn = document.querySelector(".btn-close");
-
+            // shows modal
             modal.classList.remove("hidden");
             overlay.classList.remove("hidden");
             // close modal function
