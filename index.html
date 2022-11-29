@@ -10,6 +10,8 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/results.css"/>
+    <link rel="stylesheet" href="./assets/css/results.css"/>
 
     <title>In or Out</title>
   </head>
@@ -22,7 +24,7 @@
     </header>
 
     <main>
-        <!-- Dropdown Search Bar -->
+        <!-- Dropdown + Search Bar -->
         <section class="section box">
             <div class="container">
                 <div class="columns">
@@ -43,8 +45,8 @@
                                 <input class="input is-fullwidth is-size-4 mt-4" type="text" placeholder="Type in City Name" id="cityName">
                             </div>
                             <!-- Search button -->
-                            <span class="button is-focused is-normal is-size-4 mt-4" id="inBtn"><a href = "./recipes.html">Dine In</a></span>
-                            <span class="button is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn"><a href = "./restaurant.html">Dine Out</a></span>
+                            <span class="button is-focused is-normal is-size-4 mt-4" id="inBtn" data-label="dine-in">Dine In</span>
+                            <span class="button is-focused is-normal is-size-4 mt-4 ml-6" id="outBtn" data-label="dine-out">Dine Out</span>
                         </div>
                     </div>
                 </div>
@@ -52,7 +54,27 @@
           </div>
         </div>
       </section>
+
+      <section class="modal hidden">
+        <div class="flex">
+          <img
+            src="https://static9.depositphotos.com/1431107/1135/i/600/depositphotos_11359051-stock-photo-sorry-emoticon.jpg"
+            width="50px" height="50px" alt="user" />
+          <button class="btn-close">⨉</button>
+        </div>
+        <div>
+          <h3>Sorry :(</h3>
+          <p>
+            Sorry, please select a cuisine type and city!
+          </p>
+        </div>
+      </section>
+      
+      <div class="overlay hidden">
+        <a href="./index.html">Try Another City or Cuisine</a>
+      </div>
+
     </main>
-    <script type="text/javascript" src="./assets/js/pseudocode.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
 </html>
