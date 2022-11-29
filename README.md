@@ -47,6 +47,7 @@ We used the following followed sources in the completion of this project:
 
 - https://developer.edamam.com/edamam-docs-recipe-api
 - https://www.postman.com/api-evangelist/workspace/zomato/documentation/35240-6327bead-13ec-43cc-82dd-10992b0238ae?entity=&branch=&version=
+- https://openweathermap.org/api/geocoding-api
 - https://www.w3schools.com/howto/howto_css_modals.asp
 - https://bulma.io/documentation/
 
